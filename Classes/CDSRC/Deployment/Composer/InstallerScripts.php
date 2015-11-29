@@ -41,6 +41,6 @@ class InstallerScripts {
 		chmod ('Packages/Framework/TYPO3.Flow/Scripts/setfilepermissions.sh', 0755);
 		exec('FLOW_CONTEXT=Production ./flow flow:cache:flush');
 		exec('./flow flow:core:setfilepermissions root www-data www-data');
-		exec('./flow doctrine:migrate');
+		exec('FLOW_CONTEXT=Production ./flow doctrine:migrate');
 	}
 }
